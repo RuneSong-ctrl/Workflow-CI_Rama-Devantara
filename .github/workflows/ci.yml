@@ -27,7 +27,6 @@ jobs:
     - name: Run MLflow Project (Training)
       run: |
         cd MLProject
-        # Menjalankan MLProject menggunakan virtualenv
         mlflow run . --env-manager=virtualenv
 
     - name: Upload Artifact to GitHub 

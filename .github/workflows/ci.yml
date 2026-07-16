@@ -27,7 +27,7 @@ jobs:
     - name: Run MLflow Project (Training)
       run: |
         cd MLProject
-        mlflow run . --env-manager=virtualenv
+        mlflow run . --env-manager=local
 
     - name: Upload Artifact to GitHub 
       uses: actions/upload-artifact@v4

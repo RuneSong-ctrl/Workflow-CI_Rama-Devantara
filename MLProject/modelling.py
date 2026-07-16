@@ -10,8 +10,11 @@ if __name__ == "__main__":
     print("Memuat data steam_ready_to_train.csv...")
     df = pd.read_csv('steam_ready_to_train.csv')
     
-    X = df.drop(columns=['Peak CCU'])
-    y = df['Peak CCU']
+    # mengambil hanya kolom numerik dan isi missing value 
+    df_numeric = df.select_dtypes(include=['number']).fillna(0)
+    
+    X = df_numeric.drop(columns=['Peak CCU'])
+    y = df_numeric['Peak CCU']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Hapus folder model_output jika sudah ada dari run sebelumnya

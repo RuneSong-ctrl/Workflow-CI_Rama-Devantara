@@ -1,0 +1,7 @@
+name: Steam_Model_Pipeline
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    command: "python modelling.py"
